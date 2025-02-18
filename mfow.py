@@ -44,7 +44,10 @@ with mlflow.start_run():
     mlflow.log_metric("accuracy", acc)
 
     # ✅ Lưu mô hình vào MLflow
-    # mlflow.sklearn.log_model(model, "Titanic_Model")
+    with mlflow.start_run():
+    mlflow.log_params({"param1": value1, "param2": value2})  # Chỉ log tham số
+    mlflow.log_metric("accuracy", model.score(X_test, y_test))  # Chỉ log độ chính xác
+
 
     print(f"🎯 Độ chính xác của mô hình: {acc:.4f}")
     print("✅ Mô hình đã được lưu trong MLflow!")
