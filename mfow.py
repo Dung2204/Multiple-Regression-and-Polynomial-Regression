@@ -45,8 +45,8 @@ with mlflow.start_run():
 
     # ✅ Lưu mô hình vào MLflow
     with mlflow.start_run():
-    mlflow.log_params({"param1": value1, "param2": value2})  # Chỉ log tham số
-    mlflow.log_metric("accuracy", model.score(X_test, y_test))  # Chỉ log độ chính xác
+        mlflow.log_params({"param1": value1, "param2": value2})  # Chỉ log tham số
+        mlflow.log_metric("accuracy", model.score(X_test, y_test))  # Chỉ log độ chính xác
 
 
     print(f"🎯 Độ chính xác của mô hình: {acc:.4f}")
