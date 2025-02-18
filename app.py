@@ -125,7 +125,7 @@ with mlflow.start_run():
     
     # Train final model
     model.fit(X_train, y_train)
-    mlflow.sklearn.log_model(model, "Titanic_Model", artifact_path="./mlflow_artifacts")
+    mlflow.sklearn.log_model(model, "Titanic_Model")
 
     
     # Evaluate
