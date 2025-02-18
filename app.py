@@ -123,7 +123,7 @@ with mlflow.start_run():
         mlflow.log_param("Polynomial Degree", degree)
     mlflow.log_metric("Cross-Validation R2", scores.mean())
     
-    mlflow.set_tracking_uri("file:///tmp/mlruns")
+    mlflow.set_tracking_uri("databricks")
     # Train final model
     
     model.fit(X_train, y_train)
