@@ -1,0 +1,20 @@
+artifact_path: Titanic_Model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.0
+mlflow_version: 2.20.2
+model_size_bytes: 1603
+model_uuid: 9094921b8e2443e081d5f5e9cfa991ab
+run_id: 933d10c213e84dc89a4f1bebc1742740
+utc_time_created: '2025-02-17 18:25:16.718121'
