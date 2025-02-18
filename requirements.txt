@@ -2,7 +2,6 @@ streamlit
 pandas
 numpy
 mlflow
-mlflow.sklearn
-seaborn 
+scikit-learn
+seaborn
 matplotlib
-os 
