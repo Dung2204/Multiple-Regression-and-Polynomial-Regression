@@ -125,7 +125,10 @@ with mlflow.start_run():
     
     # Train final model
     model.fit(X_train, y_train)
-    # mlflow.sklearn.log_model(model, "Titanic_Model")
+    with mlflow.start_run():
+    mlflow.log_params({"param1": value1, "param2": value2})  # Chỉ log tham số
+    mlflow.log_metric("accuracy", model.score(X_test, y_test))  # Chỉ log độ chính xác
+
     
     
     # Evaluate
