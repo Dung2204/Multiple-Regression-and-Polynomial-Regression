@@ -123,11 +123,10 @@ with mlflow.start_run():
         mlflow.log_param("Polynomial Degree", degree)
     mlflow.log_metric("Cross-Validation R2", scores.mean())
     
-    mlflow.set_tracking_uri("databricks")
     # Train final model
-    
     model.fit(X_train, y_train)
     mlflow.sklearn.log_model(model, "Titanic_Model")
+    
     
     # Evaluate
     train_score = model.score(X_train, y_train)
