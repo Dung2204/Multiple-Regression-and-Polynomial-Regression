@@ -11,6 +11,7 @@ from sklearn.pipeline import Pipeline
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
 # Load dataset
 @st.cache_data
 def load_data():
