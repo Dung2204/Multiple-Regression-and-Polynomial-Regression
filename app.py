@@ -268,7 +268,7 @@ if regression_type == 'Polynomial Regression':
     y_range_pred = poly_regressor.predict(X_range_poly)
     ax.plot(X_range, y_range_pred, color='green', label=f"Đường hồi quy bậc {degree}", linewidth=2)
 
-    ax.set_title(f"Hồi quy đa thức bậc {degree}: Dự đoán với Thực tế")
+    ax.set_title(f"Hồi quy đa thức bậc {degree}: Dự đoán với thực tế")
     ax.set_xlabel("Age")
     ax.set_ylabel("Survived")
     ax.legend()
