@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import mlflow
-import mlflow.sklearn
+# import mlflow
+# import mlflow.sklearn
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
@@ -10,7 +10,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import Pipeline
 import seaborn as sns
 import matplotlib.pyplot as plt
-
 
 # Load dataset
 @st.cache_data
@@ -103,8 +102,8 @@ if regression_type == 'Polynomial Regression':
 
 
 # MLFlow tracking
-mlflow.set_experiment("Titanic Survival Prediction")
-with mlflow.start_run():
+# mlflow.set_experiment("Titanic Survival Prediction")
+# with mlflow.start_run():
     if regression_type == 'Multiple Regression':
         model = Pipeline([
             ('scaler', StandardScaler()),
@@ -119,29 +118,23 @@ with mlflow.start_run():
     
     # Cross-validation
     scores = cross_val_score(model, X_train, y_train, cv=5, scoring='r2')
-    mlflow.log_param("Model Type", regression_type)
-    if degree:
-        mlflow.log_param("Polynomial Degree", degree)
-    mlflow.log_metric("Cross-Validation R2", scores.mean())
+    # mlflow.log_param("Model Type", regression_type)
+    # if degree:
+    #     mlflow.log_param("Polynomial Degree", degree)
+    # mlflow.log_metric("Cross-Validation R2", scores.mean())
     
-    # Train final model
+    # # Train final model
     model.fit(X_train, y_train)
-    if mlflow.active_run() is None:  # Đảm bảo không có run nào đang mở
-        with mlflow.start_run():
-            mlflow.log_params({"param1": value1, "param2": value2})  # Chỉ log tham số
-            mlflow.log_metric("accuracy", model.score(X_test, y_test))  # Chỉ log độ chính xác
-
-
-    
+    # mlflow.sklearn.log_model(model, "Titanic_Model")
     
     # Evaluate
     train_score = model.score(X_train, y_train)
     valid_score = model.score(X_valid, y_valid)
     test_score = model.score(X_test, y_test)
     
-    mlflow.log_metric("Train R2", train_score)
-    mlflow.log_metric("Valid R2", valid_score)
-    mlflow.log_metric("Test R2", test_score)
+    # mlflow.log_metric("Train R2", train_score)
+    # mlflow.log_metric("Valid R2", valid_score)
+    # mlflow.log_metric("Test R2", test_score)
     
     # Visualization
     st.write(f"### Kết quả mô hình {regression_type}")
