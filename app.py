@@ -170,7 +170,7 @@ ax[0].set_ylabel("Số lượng", fontsize=18)
 
     # Biểu đồ dự đoán vs thực tế
 sns.scatterplot(x=y_data, y=model.predict(X_data), ax=ax[1])
-ax[1].set_title(f"Dự đoán với Thực tế ({data_selection})", fontsize=25)
+ax[1].set_title(f"Dự đoán với thực tế ({data_selection})", fontsize=25)
 ax[1].set_xlabel("Giá trị thực", fontsize=18)
 ax[1].set_ylabel("Giá trị dự đoán", fontsize=18)
 
@@ -184,7 +184,7 @@ st.pyplot(fig)
     # Phần giải thích
 st.write("### Giải thích:")
 st.write("🔹 **Phân bố dữ liệu:** Biểu đồ trên thể hiện phân bố của dữ liệu đã chọn theo biến `Survived`. Nó giúp quan sát số lượng hành khách sống sót (1) và không sống sót (0). Đường cong KDE cho thấy mật độ phân bố của dữ liệu.")
-st.write("🔹 **Dự đoán với Thực tế:** Biểu đồ so sánh giá trị dự đoán của mô hình với giá trị thực tế. Nếu các điểm nằm trên đường chéo, mô hình dự đoán chính xác. Nếu phân tán quá nhiều, mô hình có thể chưa phù hợp.")
+st.write("🔹 **Dự đoán với thực tế:** Biểu đồ so sánh giá trị dự đoán của mô hình với giá trị thực tế. Nếu các điểm nằm trên đường chéo, mô hình dự đoán chính xác. Nếu phân tán quá nhiều, mô hình có thể chưa phù hợp.")
 st.write("🔹 **Phân phối dữ liệu:** Biểu đồ trên thể hiện phân bố giá trị của các biến như Pclass, Age, Fare.")
 
 
@@ -216,7 +216,7 @@ if regression_type == 'Multiple Regression':
         # Plot regression line
     ax.plot([0, 1], [0, 1], linestyle='--', color='black', label="Perfect Prediction Line")
         
-    ax.set_title("Hồi quy tuyến tính bội: Dự đoán với Thực tế (Train, Valid, Test)", fontsize=16)
+    ax.set_title("Hồi quy tuyến tính bội: Dự đoán với thực tế (Train, Valid, Test)", fontsize=16)
     ax.set_xlabel("Giá trị thực tế", fontsize=14)
     ax.set_ylabel("Giá trị dự đoán", fontsize=14)
     ax.legend()
