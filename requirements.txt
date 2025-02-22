@@ -5,3 +5,5 @@ mlflow
 scikit-learn
 seaborn
 matplotlib
+cv2
+random
