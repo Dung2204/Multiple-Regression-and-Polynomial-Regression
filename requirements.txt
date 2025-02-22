@@ -1,9 +1,8 @@
 streamlit
-pandas
 numpy
-mlflow
+pandas
+opencv-python
 scikit-learn
-seaborn
 matplotlib
-cv2
-random
+seaborn
+pillow
