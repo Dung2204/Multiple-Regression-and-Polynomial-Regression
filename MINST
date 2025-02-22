@@ -252,6 +252,8 @@ with st.expander("📊 *Chia tách dữ liệu*", expanded=True):
 
 
 
+if __name__ == "__main__":
+    st.run()
 
 
 
